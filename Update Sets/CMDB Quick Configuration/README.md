@@ -1,4 +1,4 @@
-BigPanda CMDB Configuration ServiceNow Update Set 
+# BigPanda CMDB Configuration ServiceNow Update Set 
 
 The file contains an example configuration for the CMDB Table Export feature found inside of your BigPanda > Configuration page inside of ServiceNow.  You must have the application installed for this update set to work.
 
