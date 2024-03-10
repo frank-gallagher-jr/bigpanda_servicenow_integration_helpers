@@ -11,7 +11,9 @@ I'm providing some script customizations, guides, and other files for reference 
 **Official BigPanda support resources are available here:**
 
 Website:  https://www.bigpanda.io/ 
+
 Documentation:  https://docs.bigpanda.io 
+
 User Community:  https://community.bigpanda.io/
 
 **Other useful resources**
