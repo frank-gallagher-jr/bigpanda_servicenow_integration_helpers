@@ -21,17 +21,13 @@
     var currentTime = new GlideDateTime();
 
 	var reopen = (source.u_bp_event_type) ? source.u_bp_event_type == 'incident#reopen' : source.u_bp_incident_status != 'ok';
-		
-	actionableReopen = (function TransformEntry(source) {
-		var bpUtils = new x_bip_panda.BigPandaUtility(source);
-		var incidentActionable = bpUtils.getIncidentTag('actionable');
-		return incidentActionable;
-	}) (source);
+	var bpUtils = new x_bip_panda.BigPandaUtility(source);
+	var actioableReopen = bpUtils.getIncidentTag('actionable');
 
     
 	// Adjust resolve time forward by reopen window in minutes
     // if ServiceNow incident is resolved and share is active, reopen or create
-    if (incidentState == 'resolved' && reopen && actionableReopen) {
+    if (incidentState == 'resolved' && reopen && actionableReopen == "true") {
         // Retrieve ServiceNow Incident Resolve time
         var resolveTime = new GlideDateTime(target.getValue("resolved_at"));
 		
