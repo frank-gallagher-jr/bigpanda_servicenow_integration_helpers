@@ -1,8 +1,30 @@
-// These two snippets will overcome any issues you've run into for the BigPanda Incident 
-// and BigPanda Incident Timeline buttons in case you have chosen not to enable 
-// inclusion of the "Links" in the description field in version 2.9 of the integration
+// USAGE AND GUIDANCE
+//   YOU MUST READ THIS PART - 
+//     Before applying this warm fix within your ServiceNow, be sure to understand the following: 
+// 			These snippets are provided without warranty, guarantee, and support. 
+//			Use this guidance and code AT YOUR OWN RISK.
+//			This should be used for reference purposes, but you need to use your own judgement. 
+//
+//			Test in a lower ServiceNow instance first! 
+//			Always define a specific update set when applying changes to ServiceNow!
+//			Don't be a hero and wind up with zero. 
+//
+//										 - F. Gallagher 2024
 
-// Three steps required
+// PURPOSE 
+//
+// These two snippets will overcome any functionality issues you've run into for the BigPanda Incident 
+// and BigPanda Incident Timeline buttons due to configuration choices that you made which remove the 
+// prerequisite data from the expected field.  
+
+//			If you're not sure if this code applies to you, assume that it doesn't.
+//			You'd know if you needed this, I promise. 
+
+// How to apply -
+
+// Prerequisite - You need ServiceNow Admin privs and you need to be able to change scope
+// 		BigPanda is the Application Scope you need.  
+//			IF YOU DON'T HAVE THIS STOP HERE AND SEEK A SERVICENOW ADMIN / ENGINEER / ARCHITECT
 
 // Step 1 - You need to add a column to the Incident table - System Definition > Tables > Incident
 //         Column Label (column_label): "BigPanda URL" Column Name (element): "u_bigpanda_url"
@@ -16,7 +38,7 @@
 //          on any BigPanda created incident and edit the code as follows - 
 
 
-// BigPanda Incident Button
+// BigPanda Incident Button - Button 1
 // Warm fix for customers who have chosen to disable incident links in their description
 
 function openWindow() {
@@ -32,7 +54,7 @@ function openWindow() {
     
 }
 
-// BigPanda Incident Timeline Button
+// BigPanda Incident Timeline Button - Button 2 
 // Warm fix for customers who have chosen to disable incident links in their description
 
 
@@ -48,3 +70,4 @@ function openWindow() {
 	}
 }
 
+// Make sure you apply this to both buttons. 
